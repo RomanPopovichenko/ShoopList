@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.shoplist.Domain.ShopItem
 import com.example.shoplist.Domain.ShopListRepository
+import kotlin.random.Random
 
 class ShopListImpl: ShopListRepository {
 
@@ -12,6 +13,13 @@ class ShopListImpl: ShopListRepository {
     val shopList = sortedSetOf<ShopItem>({ p0, p1 -> p0.id.compareTo(p1.id) })
 
     var generatedId = 0
+
+    init {
+        for (i in 0 until 100) {
+            val item = ShopItem("name $i", i, Random.nextBoolean())
+            addShopItem(item)
+        }
+    }
 
     override fun getShopList(): LiveData<List<ShopItem>> {
         return shopListLD
