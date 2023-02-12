@@ -9,7 +9,7 @@ import com.example.shoplist.Domain.ShopItem
 
 class MainViewModel: ViewModel() {
 
-    val repository = ShopListImpl()
+    val repository = ShopListImpl
 
     val getShopList = GetShopListUseCase(repository)
     val deleteShopItemUseCase = DeleteShopItemUseCase(repository)

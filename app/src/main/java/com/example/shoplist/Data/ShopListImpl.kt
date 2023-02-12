@@ -6,7 +6,7 @@ import com.example.shoplist.Domain.ShopItem
 import com.example.shoplist.Domain.ShopListRepository
 import kotlin.random.Random
 
-class ShopListImpl: ShopListRepository {
+object ShopListImpl: ShopListRepository {
 
     val shopListLD = MutableLiveData<List<ShopItem>>()
 
